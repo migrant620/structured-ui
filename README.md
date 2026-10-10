@@ -85,7 +85,7 @@ The static output is written to `dist/`. Serve that directory over HTTP or HTTPS
 
 ## Demo build
 
-The published demo at <https://structured-ui.edgeone.cool> is built from this repository. It was last rebuilt and redeployed on 2026-10-10 (EdgeOne deployment `dpy5pv31b9w9`, source revision `767188a5`).
+The published demo at <https://structured-ui.edgeone.cool> is built from this repository. It was last rebuilt and redeployed on 2026-10-10 (EdgeOne deployment `dpgjoduvywre`, source revision `670c1546`).
 
 ## Scope and limitations
 

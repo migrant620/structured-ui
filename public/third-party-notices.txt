@@ -1,0 +1,62 @@
+Third-party notices for Structured UI Prototype
+
+This file covers the fonts and images bundled with the build, plus the
+JavaScript dependencies. Notices for the JavaScript dependencies are
+enumerated below and expanded in the publication step.
+
+------------------------------------------------------------
+FONTS
+------------------------------------------------------------
+
+- Roboto (variable font, weights 100-900)
+  Source: The Roboto Project (googlefonts/roboto-classic), downloaded for
+  this project.
+  Licence: SIL Open Font License 1.1.
+  Use: all interface copy. The build ships twelve static instances cut from
+  the variable font (RobotoText, RobotoGutter, RobotoNow, RobotoNote,
+  RobotoNumber, RobotoTitle, RobotoHeader, RobotoSub, RobotoAction,
+  RobotoSetting, RobotoChip, RobotoMore), one per typographic role, so each
+  role renders at its own weight. No proprietary font file is
+  redistributed here.
+  Full text: assets/fonts/Roboto-OFL.txt
+
+- Plus Jakarta Sans (variable)
+  Source: tokotype/PlusJakartaSans, downloaded for this project.
+  Licence: SIL Open Font License 1.1.
+  Use: not used by the interface; included in the repository's font folder
+  with its licence text for completeness.
+  Full text: assets/fonts/PlusJakartaSans-OFL.txt
+
+------------------------------------------------------------
+IMAGES
+------------------------------------------------------------
+
+All icons, discs and glyphs are original vector works drawn for this
+prototype (react-native-svg paths). No screenshot, recolouring or crop of
+the Structured application, and no image depicting an identifiable person, is included in this distribution
+in any form.
+
+------------------------------------------------------------
+TRADEMARKS
+------------------------------------------------------------
+
+Structured is a day-planning application published under the unorderly
+brand. The name "Structured" is used
+only to identify the interface being studied. This prototype is an
+independent study work: it is not affiliated with, endorsed by, or sponsored
+by unorderly, and it is not an official product. No unorderly asset, font
+file or artwork is redistributed here; every glyph, icon and illustration
+was redrawn as an original vector for this prototype.
+
+Any remaining third-party trademarks are the property of their respective
+owners.
+
+------------------------------------------------------------
+JAVASCRIPT DEPENDENCIES
+------------------------------------------------------------
+
+The build depends on Expo, React, React Native, react-native-web,
+react-native-svg, react-native-safe-area-context, expo-font, expo-status-bar
+and expo-system-ui. Each is distributed under its own licence (predominantly
+MIT). The exact versions are pinned in package.json and expanded in the
+publication step.

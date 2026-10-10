@@ -1,0 +1,17 @@
+{
+  "expo": {
+    "name": "Structured UI Prototype",
+    "slug": "structured-ui",
+    "scheme": "structured-ui",
+    "version": "0.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "platforms": [
+      "web"
+    ]
+  }
+}

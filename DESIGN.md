@@ -24,56 +24,56 @@ colors:
   doneInk: "#59595F"
 typography:
   header:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 23
     lineHeight: 28
   rowTitle:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 18.7
     lineHeight: 21.09
     letterSpacing: 0.15
   rowSub:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 12.8
     lineHeight: 14.18
     letterSpacing: 0.08
   note:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 13.2
     lineHeight: 16
     letterSpacing: 0.3
   gutter:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 10.23
     lineHeight: 12
     letterSpacing: 1.0
   gutterNow:
-    fontFamily: Roboto (static instance, heavier stop)
+    fontFamily: Roboto (measured instance, heavier stop)
     fontSize: 10.23
     lineHeight: 12
     letterSpacing: 1.0
   dayNumber:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 16.8
     lineHeight: 18.91
   navLabel:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 13
     lineHeight: 16
   sub:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 13.8
   action:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 14.5
   setting:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 16.6
   chip:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 14
   more:
-    fontFamily: Roboto (static instance)
+    fontFamily: Roboto (measured instance)
     fontSize: 17.2
 spacing:
   frameWidth: 393
@@ -102,7 +102,7 @@ rounded:
 
 ## Overview
 
-Designed for a 393 × 777 dp phone frame, English, light theme. This document
+Based on Structured for Android, English, light theme, on a 393 × 777 dp phone frame. This document
 covers the first release batch only — the day timeline in its first-run, populated, completed and
 delete-confirmation states, the two-step task editor, the task detail sheet, the inbox tab and the
 settings tab. It is not a complete system for every Structured screen.
@@ -124,17 +124,20 @@ Colour is reserved for intent. `#F49F99` is the app's only true accent: planned 
 detail sheet's action cards, the completion rings, the editor's selection pill and the "More..."
 links all share it, with `#FDECEB` as its wash on tinted plates. Unscheduled guide rows use muted
 `#EBEBEB` discs so the spine's eye falls on what is actually planned. The active navigation item
-sits on a `#EDDCDB` capsule — a dedicated value rather than accent-over-grey.
+sits on a `#EDDCDB` capsule — measured off the frame, not derived from accent-over-grey, because
+the reference's own pill does not match that arithmetic.
 
 ## Typography
 
 The face is Roboto, but nominal weights are not what ships. Each typographic role registers its
-own static instance cut from the variable font — twelve roles in total — because nominal weights
-read too light in a browser, and the gap grows as type shrinks. Each role has its own weight,
-registered as a named instance (RobotoText, RobotoGutter, RobotoTitle, and so on).
+own static instance cut from the variable font — twelve roles in total — because the reference
+device's rendering of Roboto runs heavier than a browser's, and the gap grows as type shrinks.
+The weights were solved per role against the reference's own ink on its own pixel grid, then
+registered as named instances (RobotoText, RobotoGutter, RobotoTitle, and so on).
 
-Two details matter. Row titles carry `letterSpacing: 0.15`: tracking — not a larger size — sets
-their width without changing their height. And the gutter's "now" label is
+Two calibrations matter. Row titles carry `letterSpacing: 0.15`: an Android TextView's box is the
+text's measured advance width, and tracking — not a larger size — closes the small advance-width
+gap to the reference without widening strings that already match. And the gutter's "now" label is
 its own heavier instance at the same 10.23 dp: the current time is the only black, bold element in
 the gutter, which is how the timeline tells you where you are without a second hand.
 
@@ -162,8 +165,8 @@ still visible above the scrim.
 
 Radii follow function: 22 on the sheet that holds the day, 16 on cards (action cards, dialog
 cards, Pro banner), 8 on the editor's selection pill, fully rounded discs, rings and the FAB's
-28. The week strip's mark discs are 13.82 dp and overflow their 8 dp layout slots — the disc is
-its own token, not a property of the slot.
+28. The week strip's mark discs overflow their 8 dp accessibility nodes to a measured 13.82 dp —
+the disc is its own token, not a property of the node.
 
 ## Components
 
@@ -183,7 +186,7 @@ its own token, not a property of the slot.
   spine and stay consistent between timeline and sheet.
 - Keep the accent reserved: a new surface that needs coral is a planning surface, or it is grey.
 - Keep completed tasks on the spine; do not fade them out of the day.
-- Do not substitute nominal font weights for the per-role instances.
+- Do not substitute nominal font weights for the measured instances.
 
 ## Responsive Behavior
 

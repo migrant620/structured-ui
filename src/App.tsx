@@ -291,7 +291,7 @@ export default function App() {
               if (openId) applyEdit(openId, editor.title, editor.duration);
               setOpenId(null);
               setEditor(null);
-            } else commitTask(editor.title || 'Reply to Mail', editor.duration);
+            } else commitTask(editor.title || 'Answer Emails', editor.duration);
           }}
           onClose={() => setEditor(null)}
         />

@@ -107,7 +107,7 @@ export const SettingsScreen: React.FC = () => (
 
     {/* Pro banner: accent card, rosette badge (62 dp node), white title run, white chevron. */}
     <View style={{ position: 'absolute', left: 16.01, top: 78.91, width: 360.73, height: 89.09, borderRadius: 20, backgroundColor: colors.accent }} />
-    <Pressable accessibilityRole="button" accessibilityLabel="Plan Ahead Pro" style={{ position: 'absolute', left: 32.02, top: 88.79, width: 62.22, height: 62.22 }}>
+    <Pressable accessibilityRole="button" accessibilityLabel="Structured Pro" style={{ position: 'absolute', left: 32.02, top: 88.79, width: 62.22, height: 62.22 }}>
       <ProBadgeIcon size={62.22} color={colors.accent} />
     </Pressable>
     <Text
@@ -123,7 +123,7 @@ export const SettingsScreen: React.FC = () => (
         color: '#FFFFFF',
       }}
     >
-      Plan Ahead Pro
+      Structured Pro
     </Text>
     <View style={{ position: 'absolute', left: 352, top: 117, width: 18, height: 18 }}>
       <ChevronRightIcon size={18} color="#FFFFFF" />
@@ -134,7 +134,7 @@ export const SettingsScreen: React.FC = () => (
     <Tile top={222.14} bg={colors.accent}>
       <CloudCheckIcon size={26} color="#fff" />
     </Tile>
-    <Row title="Backup to Cloud" rowTop={219.65} value="Set Up" valueLeft={274.74} />
+    <Row title="Structured Cloud" rowTop={219.65} value="Set Up" valueLeft={274.74} />
 
     <SectionLabel label="GENERAL" top={310.4} />
     <GroupCard top={334.28} h={ROW_H * 3} />
@@ -156,11 +156,11 @@ export const SettingsScreen: React.FC = () => (
     <Tile top={559.83} bg="#FFBC0B">
       <BoltIcon size={26} color="#fff" />
     </Tile>
-    <Row title="Energy Insights" rowTop={557.34} value="Off" divider />
+    <Row title="Energy Monitor" rowTop={557.34} value="Off" divider />
     <Tile top={614.05} bg="#974767">
       <CalendarFillIcon size={26} color="#fff" />
     </Tile>
-    <Row title="Calendar Import" rowTop={611.56} pro />
+    <Row title="Google Calendar" rowTop={611.56} pro />
 
     <SectionLabel label="SUPPORT" top={702.31} />
   </View>

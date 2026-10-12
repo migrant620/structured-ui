@@ -69,24 +69,24 @@ const t = (
 
 /** The state the reference is in on first run: one scheduled task and four guide tasks. */
 export const initialTasks: Task[] = [
-  t('rise', 'Morning Ritual', '08:00 AM', 8 * 60, 30, 'alarm', {
+  t('rise', 'Rise and Shine', '08:00 AM', 8 * 60, 30, 'alarm', {
     recurring: true,
     hasNotes: true,
-    note: 'Short rest for 4m, then go!',
+    note: 'Brief calm for 4m, then go!',
   }),
-  t('guide-start', 'Start With a Simple Plan Today!', 'Tap here to see how it works', null, 30, 'checklist', {
+  t('guide-start', 'Get Started with Structured!', 'Tap here to learn the basics', null, 30, 'checklist', {
     hasNotes: true,
   }),
-  t('guide-first', 'Plan Your First Task', 'Plan your day in one view', null, 30, 'plusCircle', {
+  t('guide-first', 'Add Your First Task', 'Start structuring your day', null, 30, 'plusCircle', {
     hasNotes: true,
     checklist: { done: 0, total: 5 },
   }),
-  t('guide-inbox', 'Empty Your Mind', 'Keep every loose end', null, 30, 'tray', { hasNotes: true }),
-  t('guide-own', 'Make It Feel Yours', 'Tune colors and more', null, 30, 'gear', { hasNotes: true }),
+  t('guide-inbox', 'Fill Your Inbox', "Don't forget anything", null, 30, 'tray', { hasNotes: true }),
+  t('guide-own', 'Make It Your Own', 'Adjust colors and more', null, 30, 'gear', { hasNotes: true }),
 ];
 
 /** The hint under the last row, on the reference's first run. */
-export const planningHint = 'Free for the next 2h 25m. Plan it.';
+export const planningHint = 'Unlock potential in 2h 25m. Plan it.';
 
 /**
  * S2: the same first-run timeline, but with the user-created scheduled task the reference shows on
@@ -102,7 +102,7 @@ const weeklyReview = t('teamSync', 'Weekly review', '07:45 - 08:15 PM (30m)', 19
 // S2 keeps every S1 task, but the capture time has advanced past the rise's calm window, so its note
 // reads "0m" (home/home_02) instead of S1's "4m" (home/home_01). A fresh object only for `rise` keeps
 // the other four tasks' identity intact.
-const riseS2: Task = { ...initialTasks[0], note: 'Short rest for 0m, then go!' };
+const riseS2: Task = { ...initialTasks[0], note: 'Brief calm for 0m, then go!' };
 
 export const s2Tasks: Task[] = [riseS2, ...initialTasks.slice(1), weeklyReview];
 
@@ -126,14 +126,14 @@ export const s10Tasks: Task[] = [...s7Tasks, eveningWalk];
 
 /** The four suggestion chips the new-task editor offers, with the ranges the reference shows. */
 export const suggestions: { title: string; range: string; icon: 'at' | 'tv' | 'people' | 'run' }[] = [
-  { title: 'Reply to Mail', range: '07:45 PM - 08:00 PM (15m)', icon: 'at' },
-  { title: 'Watch a Film', range: '07:45 PM - 09:15 PM (90m)', icon: 'tv' },
-  { title: 'Meet Up with Friends', range: '07:00 PM - 07:10 PM (10m)', icon: 'people' },
-  { title: 'Go for a Walk!', range: '07:45 PM - 08:30 PM (45m)', icon: 'run' },
+  { title: 'Answer Emails', range: '07:45 PM - 08:00 PM (15m)', icon: 'at' },
+  { title: 'Watch a Movie', range: '07:45 PM - 09:15 PM (90m)', icon: 'tv' },
+  { title: 'Meet with Friends', range: '07:00 PM - 07:10 PM (10m)', icon: 'people' },
+  { title: 'Go for a Run!', range: '07:45 PM - 08:30 PM (45m)', icon: 'run' },
 ];
 
 /** The title field's own placeholder, which the reference reports as the field's hint text. */
-export const titlePlaceholder = 'Reply to Mail';
+export const titlePlaceholder = 'Answer Emails';
 
 export const formatClock = (minutes: number): string => {
   const h24 = Math.floor(minutes / 60) % 24;

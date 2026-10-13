@@ -32,7 +32,7 @@ export const colors = {
   accentWash: '#FDECEB',
   ink: '#000000',
   inkSecondary: '#8A8A8E',
-  navInk: '#828286',
+  navInk: '#8A8A8E',
   /** The capsule behind the active bar item. Measured directly off the reference (median of the
    *  pill's own pixels), not derived: accent-at-20 % over the bar would land on (237,220,219)
    *  only for the red channel and miss the green and blue. */

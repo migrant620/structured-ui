@@ -182,20 +182,24 @@ export const DetailSheet: React.FC<{
         labelW={101.5}
         onPress={onToggleDone}
       />
-      {/* Edit Task row: a full-width white slab with the accent pencil + label. */}
+      {/* Edit Task row: a full-width white slab with the accent pencil + label. Its own box is not
+          the prototype's to choose: the reference's slab measures y 710.3..761.6 (51.3 dp tall) and
+          x 16.4..376.3 (359.9 dp wide), while this one was drawn 3.2 dp lower and 6.2 dp taller
+          (58 dp). The pencil and the label keep the absolute offsets the dump reports, so the two
+          subtractions below are taken against the slab's new top rather than the old 713.45. */}
       <Pressable
         accessibilityRole="button"
         onPress={onEdit}
-        style={{ position: 'absolute', left: 16.01, top: 713.45 - SHEET_TOP, width: 360.73, height: 58, borderRadius: 16, backgroundColor: colors.sheet }}
+        style={{ position: 'absolute', left: 16.01, top: 710.3 - SHEET_TOP, width: 360.73, height: 51.3, borderRadius: 16, backgroundColor: colors.sheet }}
       >
         <View
           accessibilityRole="button"
           accessibilityLabel="Edit Task"
-          style={{ position: 'absolute', left: 139.73 - 16.01, top: 727.05 - 713.45, width: 18.19, height: 18.19, alignItems: 'center', justifyContent: 'center' }}
+          style={{ position: 'absolute', left: 139.73 - 16.01, top: 727.05 - 710.3, width: 18.19, height: 18.19, alignItems: 'center', justifyContent: 'center' }}
         >
           <PencilIcon size={18.19} color={colors.accent} />
         </View>
-        <Text style={{ position: 'absolute', left: 164.11 - 16.01, top: 724.5 - 713.45, height: 23.29, ...type.rowTitle, fontSize: 20.25, lineHeight: 23.29, color: colors.accent }}>
+        <Text style={{ position: 'absolute', left: 164.11 - 16.01, top: 724.5 - 710.3, height: 23.29, ...type.rowTitle, fontSize: 20.25, lineHeight: 23.29, color: colors.accent }}>
           Edit Task
         </Text>
       </Pressable>

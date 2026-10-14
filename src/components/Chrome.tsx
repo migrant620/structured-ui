@@ -151,7 +151,7 @@ const Mark: React.FC<{ mark: DayMark; left: number }> = ({ mark, left }) => {
 /** The seven-day strip. The selected day carries a filled accent disc and white digits.
  *  `lefts` overrides the per-column left edge (S10's scrolled strip, whose columns come off the
  *  reference's own dump rather than the shared grid). */
-export const WeekStrip: React.FC<{ days: WeekDay[]; selected: number; s2?: boolean; lefts?: number[] }> = ({ days, selected, s2 = false, lefts }) => (
+export const WeekStrip: React.FC<{ days: WeekDay[]; selected: number; s2?: boolean; lefts?: number[] }> = React.memo(({ days, selected, s2 = false, lefts }) => (
   <View style={{ position: 'absolute', left: 0, top: 0, right: 0, height: 136, zIndex: 20 }}>
     {days.map((day, i) => {
       // S2's strip is the S1 week scrolled one slot left: Sun(27) is prepended flush to the left edge
@@ -217,7 +217,7 @@ export const WeekStrip: React.FC<{ days: WeekDay[]; selected: number; s2?: boole
       );
     })}
   </View>
-);
+));
 
 export type NavKey = 'inbox' | 'timeline' | 'ai' | 'settings';
 

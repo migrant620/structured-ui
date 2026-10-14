@@ -243,7 +243,10 @@ export const DeleteDialog: React.FC<{
         Delete Task
       </Text>
       <Text style={{ position: 'absolute', left: 21.01, top: 82.31, width: 263.82, height: 16.38, fontFamily: fontFamily.sub, fontSize: 13.8, letterSpacing: 0.08, lineHeight: 16.38, color: '#85858A' }}>
-        This task will be deleted and cannot be undone.
+        {/* R26: the reference's own line is "Are you sure you want to delete this task?" — 263.8 dp
+            on one 16.4 dp line. Our longer sentence wrapped to two lines and pushed the body's
+            centre 9.1 dp off, so the copy follows the capture. */}
+        Are you sure you want to delete this task?
       </Text>
       <Pressable accessibilityRole="button" onPress={onCancel} style={{ position: 'absolute', left: 148.1, top: 121.0, width: 96.71, height: 27.4 }}>
         <Text style={{ position: 'absolute', left: 5.0, top: 8.6, height: 16.38, fontFamily: fontFamily.title, fontSize: 14.5, letterSpacing: 0.08, lineHeight: 16.38, color: colors.inkSecondary }}>Cancel</Text>

@@ -193,7 +193,7 @@ export const DetailSheet: React.FC<{
       <Pressable
         accessibilityRole="button"
         onPress={onEdit}
-        style={{ position: 'absolute', left: 16.01, top: 710.3 - SHEET_TOP, width: 360.73, height: 51.3, borderRadius: 16, backgroundColor: colors.sheet }}
+        style={{ position: 'absolute', left: 16.01, top: 710.3 - SHEET_TOP, width: 360.73, height: 51.3, borderRadius: 8, backgroundColor: colors.sheet }}
       >
         <View
           accessibilityRole="button"

@@ -69,6 +69,11 @@ const DURATION_SEGMENTS: readonly { label: string; unit: string; box: { left: nu
 ];
 /** The colour tray and its nine discs (create_06: the discs' top slivers clear the button). */
 const SWATCH = { left: 16.01, top: 692.55, w: 360.73, h: 56.0 };
+/** The category tile's cast shadow. Every corner of the reference's tile is ringed by a soft dark
+ *  halo that has faded back to the page colour about 6 dp out, strongest below. */
+const TILE_ELEVATION = {
+  shadowColor: '#000000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.26, shadowRadius: 9,
+} as const;
 const DISC = { d: 24.74, cy: 718.85, firstCx: 46.0, pitch: 40.0 };
 
 const SUGGESTION_ICONS = { at: AtIcon, tv: TvIcon, people: Person2Icon, run: RunIcon } as const;
@@ -188,10 +193,20 @@ export const EditorSheet: React.FC<{
         }}
       />
 
-      {/* The category tile: a white rounded square with the accent @ in it, and the field beside it. */}
+      {/* The category tile: a white rounded square with the accent @ in it, and the field beside it.
+
+          R29 measured two things off the raster that no earlier axis could reach. The corner: the
+          reference paints at 8.6 dp per corner (7.9 / 8.6 / 8.6 / 9.2 walking in along the
+          diagonal), not 14. The elevation: on the reference the ground right outside the tile is
+          23-24 levels darker below, 21 to the left, 11 to the right and 9 above, recovering to the
+          plain page colour (242) about 6 dp out - a soft cast shadow this drawing did not have at
+          all, which is why the tile read as floating off its own background. */}
       <Pressable
         accessibilityRole="button"
-        style={{ position: 'absolute', left: 16.01, top: tileTop, width: TILE_W, height: TILE_W, backgroundColor: '#FFFFFF', borderRadius: 14 }}
+        style={{
+          position: 'absolute', left: 16.01, top: tileTop, width: TILE_W, height: TILE_W,
+          backgroundColor: '#FFFFFF', borderRadius: 8, ...TILE_ELEVATION,
+        }}
       >
         <Pressable
           accessibilityRole="button"
@@ -264,7 +279,12 @@ export const EditorSheet: React.FC<{
                 accessibilityRole="button"
                 accessibilityLabel={s.title}
                 onPress={() => onPickSuggestion(s.title)}
-                style={{ position: 'absolute', left: CARD.left, top, width: CARD.w, height: CARD.h, backgroundColor: '#FFFFFF', borderRadius: 16 }}
+                style={{
+                  position: 'absolute', left: CARD.left, top, width: CARD.w, height: CARD.h,
+                  backgroundColor: '#FFFFFF',
+                  /* R29: the reference's suggestion cards cut 12.1 dp (11.6 / 12.1 / 12.1 / 13.0). */
+                  borderRadius: 12,
+                }}
               >
                 <Pressable
                   accessibilityRole="button"
@@ -385,7 +405,11 @@ export const EditorSheet: React.FC<{
           {/* The duration tray. The wash runs from the tray's inner edge to the pill; the pill is a
               fixed 48 dp centred on the unit run; every cell label is centred in its own cell and
               the selected cell's run is nested inside the unit run (see the file header). */}
-          <View pointerEvents="none" style={{ position: 'absolute', left: TRAY.left, top: TRAY.top, width: TRAY.w, height: TRAY.h, borderRadius: 16, backgroundColor: '#FFFFFF' }} />
+          <View pointerEvents="none" style={{
+            position: 'absolute', left: TRAY.left, top: TRAY.top, width: TRAY.w, height: TRAY.h,
+            /* R29: 8.3 dp on the reference (7.5 / 8.3 / 8.3 / 8.8). */
+            borderRadius: 8, backgroundColor: '#FFFFFF',
+          }} />
           <View
             pointerEvents="none"
             style={{
@@ -547,7 +571,11 @@ const CommitButton: React.FC<{ label: string; labelBox: { left: number; top: num
     accessibilityRole="button"
     accessibilityLabel={label}
     onPress={onPress}
-    style={{ position: 'absolute', left: BUTTON.left, top: BUTTON.top, width: BUTTON.w, height: BUTTON.h, borderRadius: 16, backgroundColor: colors.accent }}
+    style={{
+    position: 'absolute', left: BUTTON.left, top: BUTTON.top, width: BUTTON.w, height: BUTTON.h,
+    /* R29: 8.0 dp on the reference (7.5 / 8.1 / 7.9 / 8.6). */
+    borderRadius: 8, backgroundColor: colors.accent,
+  }}
   >
     <Text
       style={{

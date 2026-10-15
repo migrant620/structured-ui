@@ -97,9 +97,12 @@ const Row: React.FC<{
   );
 };
 
-/** A white group card behind a run of rows (no node on the reference). */
+/** A white group card behind a run of rows (no node on the reference).
+
+    R29 walked the corner in along the diagonal on both rasters: the reference paints at 8.2 dp
+    (7.5 / 8.1 / 8.3 / 8.8 on the four corners of the INTEGRATIONS card) where this drew 16.5. */
 const GroupCard: React.FC<{ top: number; h: number }> = ({ top, h }) => (
-  <View style={{ position: 'absolute', left: 16.01, top, width: 360.73, height: h, borderRadius: 16, backgroundColor: colors.sheet }} />
+  <View style={{ position: 'absolute', left: 16.01, top, width: 360.73, height: h, borderRadius: 8, backgroundColor: colors.sheet }} />
 );
 
 export const SettingsScreen: React.FC = () => (

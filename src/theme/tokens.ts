@@ -94,7 +94,7 @@ export const fontFamily = {
  */
 export const type = {
   header: { fontSize: 23.0, fontFamily: fontFamily.header, lineHeight: 28 },
-  rowTitle: { fontSize: 18.7, fontFamily: fontFamily.title, lineHeight: 21.09, letterSpacing: 0.15 },
+  rowTitle: { fontSize: 18.7, fontFamily: fontFamily.title, lineHeight: 21.09, letterSpacing: 0.75 },
   rowTitleTall: { fontSize: 18.7, fontFamily: fontFamily.title, lineHeight: 21.64, letterSpacing: 0.15 },
   rowSub: { fontSize: 12.8, fontFamily: fontFamily.text, lineHeight: 14.18, letterSpacing: 0.08 },
   rowMeta: { fontSize: 12.6, fontFamily: fontFamily.text, lineHeight: 14.18, letterSpacing: 0.08 },

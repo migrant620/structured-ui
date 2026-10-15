@@ -189,6 +189,7 @@ export const EditorSheet: React.FC<{
           fontSize: 23,
           fontFamily: fontFamily.header,
           lineHeight: TITLE.h,
+          letterSpacing: -0.36,
           color: INK,
         }}
       />
@@ -458,7 +459,7 @@ export const EditorSheet: React.FC<{
                     pointerEvents="none"
                     style={{
                       position: 'absolute', left: segLefts[i], top: SEG_TOP, width: segWidths[i], height: SEG_H,
-                      fontSize: 14.0, fontFamily: fontFamily.chip, lineHeight: SEG_H, color: 'transparent', textAlign: 'center',
+                      fontSize: 14.0, fontFamily: fontFamily.chip, lineHeight: SEG_H, color: 'transparent', textAlign: 'center', letterSpacing: 0.45,
                     }}
                   >
                     {label}
@@ -476,7 +477,7 @@ export const EditorSheet: React.FC<{
                     pointerEvents="none"
                     style={{
                       position: 'absolute', left: segLefts[i], top: SEG_TOP, width: segWidths[i], height: SEG_H,
-                      fontSize: 14.0, fontFamily: fontFamily.chip, lineHeight: SEG_H, color: colors.accent, textAlign: 'center',
+                      fontSize: 14.0, fontFamily: fontFamily.chip, lineHeight: SEG_H, color: colors.accent, textAlign: 'center', letterSpacing: 0.45,
                     }}
                   >
                     {label}

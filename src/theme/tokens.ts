@@ -28,6 +28,11 @@ export const colors = {
   surface: '#FFFFFF',
   /** The grey disc behind a guide task's glyph, and the bottom bar's own fill. */
   surfaceMuted: '#EBEBEB',
+  /** The settings rows' own rules. They read (196,196,198) on S12 - 39 levels under surfaceMuted,
+      which is what they were painted with. Measured 2026-10-15 at y 389.4 / 443.6 / 612.4. */
+  settingRule: '#C4C4C6',
+  /** The rule above the detail sheet's note block: (187,187,191) at y 607 on S6 and S7. */
+  detailRule: '#BBBBBF',
   accent: '#F49F99',
   accentWash: '#FDECEB',
   ink: '#000000',

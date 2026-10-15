@@ -87,8 +87,11 @@ const Row: React.FC<{
           <ChevronRightIcon size={16} color="#C6C6C8" />
         </View>
       </Pressable>
+      {/* The rule sits 1 dp below the row's own bottom edge on the capture (389.4 / 443.6 / 612.4,
+          against rowTop + ROW_H at 388.5 / 442.7 / 611.5), and it reads (196,196,198) rather than
+          the surface grey. Both were wrong: the colour by 39 levels, the edge by a full dp. */}
       {divider ? (
-        <View style={{ position: 'absolute', left: 82.24, top: rowTop + ROW_H, width: 294.49, height: 1, backgroundColor: colors.surfaceMuted }} />
+        <View style={{ position: 'absolute', left: 82.24, top: rowTop + ROW_H + 1, width: 294.49, height: 1, backgroundColor: colors.settingRule }} />
       ) : null}
     </View>
   );

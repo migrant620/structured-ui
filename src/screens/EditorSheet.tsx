@@ -189,7 +189,6 @@ export const EditorSheet: React.FC<{
           fontSize: 23,
           fontFamily: fontFamily.header,
           lineHeight: TITLE.h,
-          letterSpacing: -0.36,
           color: INK,
         }}
       />

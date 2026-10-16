@@ -17,6 +17,7 @@ import { TimelineScreen } from './screens/TimelineScreen';
 import { EditorSheet } from './screens/EditorSheet';
 import { DetailSheet, DeleteDialog } from './screens/DetailSheet';
 import { InboxScreen } from './screens/InboxScreen';
+import { AiScreen } from './screens/AiScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { colors, frame, space } from './theme/tokens';
 import { formatRange, initialTasks, planningHint, s2Tasks, s7Tasks, s10Tasks, Task } from './store';
@@ -191,7 +192,7 @@ export default React.memo(function App() {
     return <View style={{ width: frame.width, height: frame.height, backgroundColor: colors.page }} />;
   }
 
-  const chromeless = tab === 'inbox' || tab === 'settings';
+  const chromeless = tab === 'inbox' || tab === 'settings' || tab === 'ai';
   const timelineScenario = scenario === 'S10' ? 'S10' : scenario === 'S7' ? 'S7' : scenario === 'S6' ? 'S6' : scenario === 'S2' ? 'S2' : 'S1';
   const openTaskObj = tasks.find((t) => t.id === openId) ?? null;
 
@@ -231,6 +232,7 @@ export default React.memo(function App() {
           />
         ) : null}
         {tab === 'inbox' ? <InboxScreen onNew={onFab} /> : null}
+        {tab === 'ai' ? <AiScreen onNew={onFab} /> : null}
         {tab === 'settings' ? <SettingsScreen /> : null}
       </View>
       {/* The nav strip's own grey runs under every tab: the reference's inbox and settings frames

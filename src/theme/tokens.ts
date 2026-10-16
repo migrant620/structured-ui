@@ -94,18 +94,18 @@ export const fontFamily = {
  */
 export const type = {
   header: { fontSize: 23.0, fontFamily: fontFamily.header, lineHeight: 28 },
-  rowTitle: { fontSize: 18.7, fontFamily: fontFamily.title, lineHeight: 21.09, letterSpacing: 0.75 },
+  rowTitle: { fontSize: 18.7, fontFamily: fontFamily.title, lineHeight: 21.09, letterSpacing: 1.38 },
   rowTitleTall: { fontSize: 18.7, fontFamily: fontFamily.title, lineHeight: 21.64, letterSpacing: 0.15 },
   rowSub: { fontSize: 12.8, fontFamily: fontFamily.text, lineHeight: 14.18, letterSpacing: 0.08 },
   rowMeta: { fontSize: 12.6, fontFamily: fontFamily.text, lineHeight: 14.18, letterSpacing: 0.08 },
   note: { fontSize: 13.2, fontFamily: fontFamily.note, lineHeight: 16, letterSpacing: 0.3 },
   navLabel: { fontSize: 13.0, fontFamily: fontFamily.text, lineHeight: 16, letterSpacing: 0.08 },
-  gutter: { fontSize: 10.23, fontFamily: fontFamily.gutter, lineHeight: 12, letterSpacing: 1.0 },
-  count: { fontSize: 12.6, fontFamily: fontFamily.text, lineHeight: 14.18, letterSpacing: 0.08 },
+  gutter: { fontSize: 10.23, fontFamily: fontFamily.gutter, lineHeight: 12, letterSpacing: 1.88 },
+  count: { fontSize: 12.6, fontFamily: fontFamily.text, lineHeight: 14.18, letterSpacing: 0.30 },
   dayLabel: { fontSize: 12.6, fontFamily: fontFamily.text, lineHeight: 14.18 },
-  dayNumber: { fontSize: 16.8, fontFamily: fontFamily.number, lineHeight: 18.91 },
+  dayNumber: { fontSize: 16.8, fontFamily: fontFamily.number, lineHeight: 18.91, letterSpacing: -0.36 },
   /** The gutter's "now" label: same size, black, heavier face. */
-  gutterNow: { fontSize: 10.23, fontFamily: fontFamily.now, lineHeight: 12, letterSpacing: 1.0 },
+  gutterNow: { fontSize: 10.23, fontFamily: fontFamily.now, lineHeight: 12, letterSpacing: 1.88 },
 };
 
 /** The page is the reference frame minus the platform's own status bar and gesture bar. */

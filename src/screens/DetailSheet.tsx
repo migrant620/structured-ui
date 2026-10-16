@@ -83,7 +83,7 @@ const ActionCard: React.FC<{
         height: 16.38,
         fontFamily: fontFamily.action,
         fontSize: 14.5,
-        letterSpacing: 0.08,
+        letterSpacing: -0.12,
         lineHeight: 16.38,
         textAlign: 'center',
         color: colors.accent,
